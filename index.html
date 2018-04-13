@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <div id="Main"></div>
+
+    <div class="container">
+        <h2>Simple Collapsible</h2>
+        <p>Click on the button to toggle between showing and hiding content.</p>
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+        <div id="demo" class="collapse">
+        <!-- start form -->
+        
+        <form class="form-horizontal">
+            <fieldset>
+            
+            <!-- Form Name -->
+            <legend>New Recipe</legend>
+            
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Name">Name</label>  
+              <div class="col-md-4">
+              <input id="Name" name="Name" type="text" placeholder="Name" class="form-control input-md" required="">
+              <span class="help-block">Name of recipe *required Field</span>  
+              </div>
+            </div>
+            
+            <!-- Appended Input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Servings">Number of Servings</label>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input id="Servings" name="Servings" class="form-control" placeholder="Enter the number of servings" type="text" required="">
+                  <span class="input-group-addon">Servings</span>
+                </div>
+                <p class="help-block">Number of servings in minutes</p>
+              </div>
+            </div>
+            <!-- Appended Input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="PrepTime">Prep Time</label>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input id="PrepTime" name="PrepTime" class="form-control" placeholder="Preparation time in Minutes" type="text" required="">
+                  <span class="input-group-addon">Minutes</span>
+                </div>
+                <p class="help-block">Preparation time in Minutes</p>
+              </div>
+            </div>
+            <!-- Appended Input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Cooking Time">CookingTime</label>
+              <div class="col-md-4">
+                <div class="input-group">
+                  <input id="Cooking Time" name="Cooking Time" class="form-control" placeholder="Cooking time in minutes" type="text" required="">
+                  <span class="input-group-addon">Minutes</span>
+                </div>
+                <p class="help-block">Cooking time in minutes</p>
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Ingredient1">Ingredient</label>  
+              <div class="col-md-4" id="IngredientGroup">
+              
+              <div id="1">
+              <input id="Ingredient1" name="Ingredient1" type="text" placeholder="Ingredient + Quantity" class="form-control input-md" required="">
+              <button type="button" class="close" aria-label="Close" onclick="onRemoveTextBox('1')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+              
+              <span class="help-block">Enter ingredient + Quantity</span>  
+              </div>
+            </div>
+            
+            <!-- Button Add Ingredient -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="AddIngredient"></label>
+              <div class="col-md-4" id="AddIngredientButtonGroup">
+                <button id="AddIngredient" name="AddIngredient" class="btn btn-primary" onclick="onAddIngredientClk()">Add Ingredient</button>
+              </div>
+            </div>
+            
+            <!-- Textarea -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Instruction">Instructions</label>
+              <div class="col-md-4">                     
+                <textarea class="form-control" id="Instruction" name="Instruction">Instructions</textarea>
+              </div>
+            </div>
+            
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="Save"></label>
+              <div class="col-md-4">
+                <button id="Save" name="Save" class="btn btn-success">Save</button>
+              </div>
+            </div>
+            
+            </fieldset>
+            </form>
+                
+
+        <!-- End form -->
+        </div>
+      </div>
+      
+    <script src="page_logic.js"></script>   
+    <script src="app.js"></script>
+</body>
+</html>
+
+
