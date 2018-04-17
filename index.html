@@ -33,7 +33,7 @@
           <div class="col-md-4">
             <input id="Name" name="Name" type="text" placeholder="Name" class="form-control input-md" required>
           </div>
-          
+
 
         </div>
 
@@ -73,13 +73,13 @@
         </div>
         <!-- ingredients-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Ingredient1">Ingredients</label>
+          <label class="col-md-4 control-label" for="Ingredient0">Ingredients</label>
           <div class="col-md-4" id="IngredientGroup">
 
-            <div id="1">
-              <input id="Ingredient1" name="Ingredient1Name" type="text" placeholder="Ingredient + Quantity" class="form-control input-md"
+            <div id="0">
+              <input id="Ingredient0" name="Ingredient0Name" type="text" placeholder="Ingredient + Quantity" class="form-control input-md"
                 required="">
-              <button type="button" class="close" aria-label="Close" onclick="onRemoveTextBox('1')">
+              <button type="button" class="close" aria-label="Close" onclick="onRemoveTextBox('0')">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -92,17 +92,33 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="AddIngredient"></label>
           <div class="col-md-4" id="AddIngredientButtonGroup">
-            <button type="button"  id="AddIngredient" name="AddIngredient" class="btn btn-primary" onclick="onAddIngredientClk()">Add Ingredient</button>
+            <button type="button" id="AddIngredient" name="AddIngredient" class="btn btn-primary" onclick="onAddIngredientClk()">Add Ingredient</button>
           </div>
         </div>
 
-        <!-- Textarea -->
+        <!-- Instructions text -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Instruction">Instructions</label>
-          <div class="col-md-4">
-            <textarea class="form-control" id="Instruction" name="Instruction" rows="10">Instructions</textarea>
+          <label class="col-md-4 control-label" for="Instruction0">Instructions</label>
+          <div class="col-md-4" id="InstructionGroup">
+
+            <div id="ins0">
+              <input id="Instruction0" name="Instruction0Name" type="text" placeholder="Instruction" class="form-control input-md" required>
+              <button type="button" class="close" aria-label="Close" onclick="onRemoveInstruction('ins0')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
           </div>
         </div>
+
+        <!-- Button Add Ingredient -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="AddInstruction"></label>
+          <div class="col-md-4" id="AddIngredientButtonGroup">
+            <button type="button" id="AddInstruction" name="AddInstruction" class="btn btn-primary" onclick="onAddInstructionClk()">Add Instruction</button>
+          </div>
+        </div>
+
 
         <!-- Youtube link-->
         <div class="form-group">
@@ -114,7 +130,7 @@
           </div>
         </div>
 
-        <!-- save reciepe -->
+        <!-- save reciepe button -->
         <div class="form-group">
           <label class="col-md-4 control-label" for="Save"></label>
           <div class="col-md-4">
