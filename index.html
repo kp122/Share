@@ -23,7 +23,7 @@
       <fieldset>
 
         <!-- Form Name -->
-        <legend>New Recipe</legend>
+        <legend>New Recipe s</legend>
 
         <!-- name-->
         <div class="form-group">
@@ -31,7 +31,7 @@
           <label class="col-md-4 control-label" for="Name">Name</label>
 
           <div class="col-md-4">
-            <input id="Name" name="Name" type="text" placeholder="Name" class="form-control input-md" required="Enter a name">
+            <input id="Name" name="Name" type="text" placeholder="Name" class="form-control input-md" required>
           </div>
           
 
@@ -62,18 +62,18 @@
         </div>
         <!-- Minutes-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Cooking Time">CookingTime</label>
+          <label class="col-md-4 control-label" for="CookingTime">CookingTime</label>
           <div class="col-md-4">
             <div class="input-group">
-              <input id="Cooking Time" name="Cooking Time" class="form-control" placeholder="Cooking time in minutes" type="text" required="">
+              <input id="CookingTime" name="Cooking Time" class="form-control" placeholder="Cooking time in minutes" type="text" required="">
               <span class="input-group-addon">Minutes</span>
             </div>
 
           </div>
         </div>
-        <!-- Text input-->
+        <!-- ingredients-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Ingredientfor">Ingredients</label>
+          <label class="col-md-4 control-label" for="Ingredient1">Ingredients</label>
           <div class="col-md-4" id="IngredientGroup">
 
             <div id="1">
@@ -92,7 +92,7 @@
         <div class="form-group">
           <label class="col-md-4 control-label" for="AddIngredient"></label>
           <div class="col-md-4" id="AddIngredientButtonGroup">
-            <button type="button" id="AddIngredient" name="AddIngredient" class="btn btn-primary" onclick="onAddIngredientClk()" disableValidation="true">Add Ingredient</button>
+            <button type="button"  id="AddIngredient" name="AddIngredient" class="btn btn-primary" onclick="onAddIngredientClk()">Add Ingredient</button>
           </div>
         </div>
 
@@ -106,10 +106,10 @@
 
         <!-- Youtube link-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="Youtube link">Youtube link</label>
+          <label class="col-md-4 control-label" for="youtubelink">Youtube link</label>
           <div class="col-md-4">
             <div class="input-group">
-              <input id="youtubelink" name="youtubelink" class="form-control" placeholder="You Tube Link" type="text" required="">
+              <input id="youtubelink" name="youtubelink" class="form-control" placeholder="You Tube Link" type="text" required>
             </div>
           </div>
         </div>
@@ -130,7 +130,6 @@
 
   </div>
 
-  <script src="page_logic.js"></script>
   <script src="app.js"></script>
 
   <!-- Optional JavaScript -->
@@ -144,4 +143,3 @@
 </body>
 
 </html>
-
