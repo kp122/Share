@@ -10,7 +10,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
-  <title>Hello, worlds!</title>
+  <link rel="manifest" href="manifest.json">
+  <title>Share App</title>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
       <fieldset>
 
         <!-- Form Name -->
-        <legend>New Recipe s</legend>
+        <legend>New Recipe</legend>
 
         <!-- name-->
         <div class="form-group">
@@ -42,11 +43,11 @@
           <label class="col-md-1 control-label" for="Servings">Number of Servings</label>
           <div class="col-md-4">
             <div class="input-group">
-              <input id="Servings" name="Servings" class="form-control" placeholder="Enter the number of servings" type="text" required="">
-              <span class="input-group-addon">Servings</span>
-
+              <input id="Servings" name="Servings" class="form-control" placeholder="Number of servings" type="text" required="">
+              <div class="input-group-append">
+                  <span class="input-group-text">Servings</span>
+              </div>
             </div>
-
           </div>
         </div>
         <!-- prep time-->
@@ -55,7 +56,9 @@
           <div class="col-md-4">
             <div class="input-group">
               <input id="PrepTime" name="PrepTime" class="form-control" placeholder="Preparation time in Minutes" type="text" required="">
-              <span class="input-group-addon">Minutes</span>
+              <div class="input-group-append">
+                  <span class="input-group-text">Minutes</span>
+              </div>
             </div>
 
           </div>
@@ -65,25 +68,32 @@
           <label class="col-md-4 control-label" for="CookingTime">CookingTime</label>
           <div class="col-md-4">
             <div class="input-group">
-              <input id="CookingTime" name="Cooking Time" class="form-control" placeholder="Cooking time in minutes" type="text" required="">
-              <span class="input-group-addon">Minutes</span>
+              <input id="CookingTime" name="Cooking Time" class="form-control" placeholder="Cooking time" type="text" required="">
+              <div class="input-group-append">
+                  <span class="input-group-text">Minutes</span>
+              </div>
+              
             </div>
-
           </div>
         </div>
+
         <!-- ingredients-->
         <div class="form-group">
           <label class="col-md-4 control-label" for="Ingredient0">Ingredients</label>
           <div class="col-md-4" id="IngredientGroup">
 
-            <div id="0">
-              <input id="Ingredient0" name="Ingredient0Name" type="text" placeholder="Ingredient + Quantity" class="form-control input-md"
-                required="">
-              <button type="button" class="close" aria-label="Close" onclick="onRemoveTextBox('0')">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div id="ing0">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">1</div>
+                </div>
+                <input id="Ingredient0" name="Ingredient0Name" type="text" placeholder="Ingredient + Quantity" class="form-control input-md"
+                  required="">
+                <button type="button" class="close" aria-label="Close" onclick="onRemoveIngredient('ing0')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
             </div>
-
 
           </div>
         </div>
@@ -102,12 +112,19 @@
           <div class="col-md-4" id="InstructionGroup">
 
             <div id="ins0">
-              <input id="Instruction0" name="Instruction0Name" type="text" placeholder="Instruction" class="form-control input-md" required>
-              <button type="button" class="close" aria-label="Close" onclick="onRemoveInstruction('ins0')">
-                <span aria-hidden="true">&times;</span>
-              </button>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">1</div>
+                </div>
+                <input id="Instruction0" name="Instruction0Name" class="form-control" type="text" required>
+                <button type="button" class="close" aria-label="Close" onclick="onRemoveInstruction('ins0')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <input id="inspic0" name="input-b1" type="file" class="file" onchange="onChoseImage(inspic0)">
             </div>
-            
+
+
           </div>
         </div>
 

@@ -22,6 +22,17 @@ window.addEventListener('load', e => {
 
 })
 
+if('serviceWorker' in navigator){
+    try{
+        navigator.serviceWorker.register('sw.js');
+        console.log("Registered SW");
+    }
+    catch(error){
+        console.log("Couldnt register service worker");
+    }
+    
+}
+
 
 function onAddInstructionClk(){
     if (typeof onAddInstructionClk.counter == 'undefined') {
@@ -61,18 +72,19 @@ function onAddIngredientClk() {
     }
 
     var vals = [];
+    var counter = onAddIngredientClk.counter;
 
     //save the imput box values
-    for (i = 0; i < onAddIngredientClk.counter; i++) {
+    for (i = 0; i < counter; i++) {
         vals.push($("#Ingredient" + i).val());
     }
 
     //add a new input box 
-    document.getElementById("IngredientGroup").innerHTML = document.getElementById("IngredientGroup").innerHTML + "<div id=\"" + onAddIngredientClk.counter + "\">" +
-        "<input id=\"Ingredient" + onAddIngredientClk.counter + "\" name=\"Ingredient" + onAddIngredientClk.counter + "\" type=\"text\" placeholder=\"Ingredient + Quantity\" class=\"form-control input-md\" required=\"\">" +
-        "<button onclick=\"onRemoveTextBox('" + onAddIngredientClk.counter + "')\" type=\"button\" class=\"close\" aria-label=\"Close\">" +
-        "<span aria-hidden=\"true\">&times;</span>" +
-        "</button></div>";
+    document.getElementById("IngredientGroup").innerHTML +="<div id=\"ing"+counter+"\">" +
+    "<div class=\"input-group\"><div class=\"input-group-prepend\"><div class=\"input-group-text\">"+(counter+1)+"</div>"+
+    "</div><input id=\"Ingredient"+counter+"\" name=\"Ingredient"+counter+"Name\" type=\"text\" placeholder=\"Ingredient + Quantity\" class=\"form-control input-md\""+
+    "required><button type=\"button\" class=\"close\" aria-label=\"Close\" onclick=\"onRemoveIngredient('ing"+counter+"')\">"+
+    "<span aria-hidden=\"true\">&times;</span></button></div></div>";
 
     //restore the input box values
     for (i = 0; i < onAddIngredientClk.counter; i++) {
@@ -91,10 +103,14 @@ function onRemoveInstruction(id) {
     delete element;
 }
 
-function onRemoveTextBox(id) {
+function onRemoveIngredient(id) {
     var element = document.getElementById(id);
     element.outerHTML = "";
     onAddIngredientClk.counter--;
  
     delete element;
+}
+
+function onChoseImage(id){
+    window.alert("Selected pic");
 }
