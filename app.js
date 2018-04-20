@@ -113,7 +113,7 @@ function onAddTagClk() {
 
     //save the imput box values
     for (i = 0; i < counter; i++) {
-        alert("pushing " + $("#tag" + i).val());
+        vals.push($("#tag" + i).val());
     }
 
     //add a new input box 
@@ -169,8 +169,7 @@ function readURL(input,id) {
 }
 
 
-$(document).ready(function () {
-
+$(document).ready(function () {  
 });
 
 
