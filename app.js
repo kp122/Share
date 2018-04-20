@@ -42,22 +42,27 @@ function onAddInstructionClk(){
     
     var counter = onAddInstructionClk.counter;
 
-    var vals = [];
+    var valsText = [];
+    var valsLinks = [];
 
     //save the imput box values
     for (i = 0; i < counter; i++) {
-        vals.push($("#Instruction" + i).val());
+        valsText.push($("#Instruction" + i).val());
+        valsLinks.push($("#vidins"+i).val());   
     }
 
-    document.getElementById("InstructionGroup").innerHTML +=  "<div id=\"ins"+counter+"\">"+
-              "<input id=\"Instruction"+counter+"\" name=\"Instruction0Name\" type=\"text\" placeholder=\"Instruction\" class=\"form-control input-md\" required>"+
-              "<button type=\"button\" class=\"close\" aria-label=\"Close\" onclick=\"onRemoveInstruction('ins"+counter+"')\">"+
-              "<span aria-hidden=\"true\">&times;</span>"+
-              "</button></div>"
+    document.getElementById("InstructionGroup").innerHTML += "<div id='ins"+counter+"'><div class='input-group'><div class='input-group-prepend'>"+
+    "<div class='input-group-text'>"+(counter+1)+"</div></div><input id='Instruction"+counter+"' name='Instruction"+counter+"Name' class='form-control' type='text' required>"+
+    "<button type='button' class='close' aria-label='Close' onclick=\"onRemoveInstruction('ins"+counter+"')\"><span aria-hidden='true'>&times;</span>"+
+    "</button></div><div class='input-group'><div class='input-group-prepend'><div class='input-group-text' for='imgInp"+counter+"'>Image</div>"+
+    "</div><input type='file' id='imgInp"+counter+"' onchange=\"onImageSelect('"+counter+"')\" /></div><div id='img"+counter+"'></div><div class='col-md-6'>"+
+    "<label class='control-label' for='vidins"+counter+"'>Youtube link</label><input id='vidins"+counter+"' name='vid-ins"+counter+"' class='form-control' type='text'>"+
+    "</div></div>";
 
     //restore the input box values
     for (i = 0; i < counter; i++) {
-        $("#Instruction" + i).val(vals[i]);
+        $("#Instruction" + i).val(valsText[i]);
+        $("#vidins"+i).val(valsLinks[i]);
     }
 
     onAddInstructionClk.counter++;
@@ -95,6 +100,45 @@ function onAddIngredientClk() {
 }
 
 
+
+function onAddTagClk() {
+
+    if (typeof onAddTagClk.counter == 'undefined') {
+        // It has not... perform the initialization
+        onAddTagClk.counter = 1;
+    }
+
+    var vals = [];
+    var counter = onAddTagClk.counter;
+
+    //save the imput box values
+    for (i = 0; i < counter; i++) {
+        alert("pushing " + $("#tag" + i).val());
+    }
+
+    //add a new input box 
+    document.getElementById("tags").innerHTML +="<div id='recipetag"+counter+"'><div class='input-group'><div class='input-group-prepend'>"+
+    "<div class='input-group-text'>#</div></div><input id='tag"+counter+"' name='recipetag"+counter+"name' type='text' placeholder='tag' class='form-control input-md'>"+
+    "<button type='button' class='close' aria-label='Close' onclick=\"onRemoveTag('recipetag"+counter+"')\"><span aria-hidden='true'>&times;</span>"+
+    "</button></div></div>";
+
+    //restore the input box values
+    for (i = 0; i < counter; i++) {
+        $("#tag" + i).val(vals[i]);
+    }
+
+    onAddTagClk.counter++;
+}
+
+function onRemoveTag(id) {
+    var element = document.getElementById(id);
+    element.outerHTML = "";
+    onAddTagClk.counter--;
+ 
+    delete element;
+}
+
+
 function onRemoveInstruction(id) {
     var element = document.getElementById(id);
     element.outerHTML = "";
@@ -111,6 +155,30 @@ function onRemoveIngredient(id) {
     delete element;
 }
 
-function onChoseImage(id){
-    window.alert("Selected pic");
+function readURL(input,id) {
+
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+  
+      reader.onload = function(e) {
+        document.getElementById("img"+id).innerHTML="<img width=\"200\" height=\"200\" id=\"imgtag"+id+"\" src=\"#\" />"
+        $('#imgtag'+id).attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
 }
+
+
+$(document).ready(function () {
+
+});
+
+
+function onImageSelect(id){ 
+    readURL(document.getElementById("imgInp"+id),id);
+}
+
+
+
+  
+  
