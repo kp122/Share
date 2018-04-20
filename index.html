@@ -20,7 +20,7 @@
   <div class="container-fluid">
     <!-- main form-->
     <!-- start form -->
-    <form enctype="multipart/form-data" class="form-horizontal" method="post" action="http://127.0.0.1:5000/newrecipe">
+    <form class="form-horizontal" method="post" action="http://127.0.0.1:8080/newrec">
       <fieldset>
 
         <!-- Form Name -->
@@ -116,7 +116,7 @@
                 <div class='input-group-prepend'>
                   <div class='input-group-text' for='imgInp0'>Image</div>
                 </div>
-                <input type='file' id='imgInp0' name="imgImp0Name" onchange="onImageSelect('0')" />
+                <input type='file' id='imgInp0' onchange="onImageSelect('0')" />
               </div>
               <div id='img0'></div>
               <!-- Video Youtube-->
@@ -137,7 +137,7 @@
         <!-- Youtube link-->
         <div class="form-group col-md-12">
           <label class="control-label" for="youtubelink">Youtube link</label>
-          <input id="youtubelink" name="youtubelink" class="form-control" placeholder="You Tube Link" type="text">
+          <input id="youtubelink" name="youtubelink" class="form-control" placeholder="You Tube Link" type="text" required>
         </div>
 
         <!-- tags-->
