@@ -13,7 +13,6 @@ async function GetData() {
     console.log(json);
     document.getElementById("Main").innerHTML = JSON.stringify(json);
 
-
 }
 
 window.addEventListener('load', e => {
@@ -169,7 +168,20 @@ function readURL(input,id) {
 }
 
 
-$(document).ready(function () {  
+$(document).ready(function () {
+    $('#mainForm').submit(function() {
+        // set hidden values
+        $("#NumIngredients").val(onAddIngredientClk.counter || 1); 
+        $("#NumInstructions").val(onAddInstructionClk.counter  || 1 );
+       
+        if(onAddTagClk.counter == undefined){
+            $("#NumTags").val( $("#tag0").val() == "" ? 0 : 1 );  
+        }
+        else{
+            $("#NumTags").val(onAddTagClk.counter);
+        }
+ 
+      });  
 });
 
 
